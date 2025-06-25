@@ -1,0 +1,185 @@
+/* General Resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #89f7fe, #66a6ff);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Floating Timer at Top Right */
+#timerDisplay.floating-timer {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  background: white;
+  color: #ff5722;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  font-size: 16px;
+}
+
+/* App Container */
+#app {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.15);
+  animation: fadeIn 1s ease-in-out;
+  transition: all 0.5s ease;
+}
+
+/* Form Containers */
+#registerForm, #loginForm, #quizSection {
+  display: none;
+  opacity: 0;
+  transform: scale(0.98);
+  transition: all 0.4s ease-in-out;
+}
+
+#registerForm.active,
+#loginForm.active,
+#quizSection.active {
+  display: block;
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Headings */
+h2, h3 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Input Styling */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: #66a6ff;
+  outline: none;
+  background-color: #f9f9f9;
+}
+
+/* Button Styling */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  background: #66a6ff;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #4e8ffb;
+  transform: scale(1.03);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+/* Nav Buttons */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Question Box */
+#questionBox {
+  margin-bottom: 20px;
+  animation: slideIn 0.5s ease-in-out;
+}
+
+label {
+  font-size: 16px;
+  color: #555;
+  display: block;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  margin-right: 8px;
+}
+
+/* Question Counter */
+.question-counter {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #ff5722;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ✅ Submission Summary Scrollable Fix */
+#quizSection {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* ✅ Style for each submission block */
+#quizSection div {
+  background: #f1faff;
+  margin-bottom: 12px;
+  padding: 12px;
+  border-left: 4px solid #66a6ff;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* ✅ Optional: Custom scrollbar */
+#quizSection::-webkit-scrollbar {
+  width: 6px;
+}
+
+#quizSection::-webkit-scrollbar-thumb {
+  background: #66a6ff;
+  border-radius: 4px;
+}
