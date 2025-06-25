@@ -228,15 +228,15 @@ function logout() {
 // ------------------------- Overall Test Timer ---------------------------
 
 function startTestTimer() {
-  let totalSec = 5 * 60; // 45 minutes
+  let totalSec = 20 * 60; // 45 minutes
   timer = setInterval(() => {
     const m = Math.floor(totalSec / 60);
     const s = totalSec % 60;
     document.getElementById("timerDisplay").innerText =
       `Time left: ${m}m ${s}s`;
 
-    if (totalSec === 60 && !warningShown) {
-      alert("⚠️ 1 minutes remaining!");
+    if (totalSec === 120 && !warningShown) {
+      alert("⚠️ 2 minutes remaining!");
       warningShown = true;
     }
     if (totalSec <= 0) {
