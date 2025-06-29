@@ -9,8 +9,8 @@ const path = require('path');
 dotenv.config();
 
 // Models
-const User = require('./models/User');
-const Answer = require('./models/Answer');
+const User = require('./models/user');
+const Answer = require('./models/answer');
 
 const app = express();
 
