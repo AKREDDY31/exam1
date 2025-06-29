@@ -8,12 +8,18 @@
 </head>
 <body>
 
-  <!-- ✅ Floating Timer -->
+  
+
+<!-- ✅ Floating Timer & Submit -->
+<div id="quizHeader" style="display: none;">
   <div id="timerDisplay" class="floating-timer"></div>
+  <button id="floatingSubmitBtn" onclick="submitAnswers()">Submit</button>
+</div>
+
 
   <div id="app">
 
-    <!-- Register Form -->
+    <!-- 🔵 Register Form -->
     <div id="registerForm" class="form-container active">
       <h2>Register</h2>
       <input type="text" id="regName" placeholder="Name" /><br>
@@ -22,36 +28,34 @@
       <input type="password" id="confirmPassword" placeholder="Confirm Password" /><br>
       <button onclick="register()">Register</button>
 
-      <!-- Switch to Login -->
       <p style="margin-top: 15px; text-align: center;">
         Already have an account?
         <a href="#" onclick="showSection('loginForm')" style="color: #4e8ffb; text-decoration: underline;">Login</a>
       </p>
     </div>
 
-    <!-- Login Form -->
+    <!-- 🟢 Login Form -->
     <div id="loginForm" class="form-container">
       <h2>Login</h2>
       <input type="email" id="loginEmail" placeholder="Email" /><br>
       <input type="password" id="loginPassword" placeholder="Password" /><br>
       <button onclick="login()">Login</button>
+
+      <p style="margin-top: 15px; text-align: center;">
+        New user?
+        <a href="#" onclick="showSection('registerForm')" style="color: #4e8ffb; text-decoration: underline;">Register here</a>
+      </p>
     </div>
 
-    <!-- Quiz Section -->
+    <!-- 🟡 Quiz Section -->
     <div id="quizSection" class="form-container">
-      <h2>Aptitude Test</h2>
-
-      <!-- Question Count Display -->
+      <h2>Data Structers and Algorithms</h2>
       <div id="questionCount" class="question-counter"></div>
-
-      <!-- Question and Options -->
       <div id="questionBox"></div>
 
-      <!-- Navigation Buttons -->
       <div class="nav-buttons">
         <button onclick="prevQuestion()">Back</button>
         <button id="nextBtn" onclick="nextQuestion()">Save & Next</button>
-        <button id="submitBtn" onclick="submitAnswers()">Submit</button>
       </div>
     </div>
 
