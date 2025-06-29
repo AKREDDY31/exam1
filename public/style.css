@@ -1,4 +1,4 @@
-/* General Resets */
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -17,19 +17,50 @@ body {
   position: relative;
 }
 
-/* Floating Timer at Top Right */
-#timerDisplay.floating-timer {
+/* Floating Timer & Submit */
+#quizHeader {
   position: fixed;
   top: 20px;
   right: 30px;
-  background: white;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+/* Timer */
+#timerDisplay {
+  background: #ffffff;
   color: #ff5722;
   padding: 10px 20px;
   border-radius: 10px;
   font-weight: bold;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  z-index: 1000;
   font-size: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+/* Submit Button (Floating) */
+#floatingSubmitBtn {
+  padding: 10px 20px;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#floatingSubmitBtn:hover {
+  background-color: #e60000;
+  transform: scale(1.03);
+}
+
+#floatingSubmitBtn:active {
+  transform: scale(0.97);
 }
 
 /* App Container */
@@ -44,8 +75,10 @@ body {
   transition: all 0.5s ease;
 }
 
-/* Form Containers */
-#registerForm, #loginForm, #quizSection {
+/* Form Sections Visibility */
+#registerForm,
+#loginForm,
+#quizSection {
   display: none;
   opacity: 0;
   transform: scale(0.98);
@@ -67,7 +100,7 @@ h2, h3 {
   margin-bottom: 20px;
 }
 
-/* Input Styling */
+/* Input Fields */
 input[type="text"],
 input[type="email"],
 input[type="password"] {
@@ -79,15 +112,13 @@ input[type="password"] {
   transition: 0.3s;
 }
 
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="password"]:focus {
+input:focus {
   border-color: #66a6ff;
-  outline: none;
   background-color: #f9f9f9;
+  outline: none;
 }
 
-/* Button Styling */
+/* Button */
 button {
   width: 100%;
   padding: 12px;
@@ -110,7 +141,7 @@ button:active {
   transform: scale(0.97);
 }
 
-/* Nav Buttons */
+/* Navigation Buttons */
 .nav-buttons {
   display: flex;
   justify-content: space-between;
@@ -118,12 +149,13 @@ button:active {
   margin-top: 20px;
 }
 
-/* Question Box */
+/* Question Display */
 #questionBox {
   margin-bottom: 20px;
   animation: slideIn 0.5s ease-in-out;
 }
 
+/* Labels and Options */
 label {
   font-size: 16px;
   color: #555;
@@ -145,25 +177,14 @@ input[type="radio"] {
   color: #ff5722;
 }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes slideIn {
-  from { opacity: 0; transform: translateX(-20px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-/* ✅ Submission Summary Scrollable Fix */
+/* Quiz Section Scrollable */
 #quizSection {
   max-height: 80vh;
   overflow-y: auto;
   padding-right: 10px;
 }
 
-/* ✅ Style for each submission block */
+/* Question Card Style */
 #quizSection div {
   background: #f1faff;
   margin-bottom: 12px;
@@ -174,7 +195,7 @@ input[type="radio"] {
   line-height: 1.6;
 }
 
-/* ✅ Optional: Custom scrollbar */
+/* Scrollbar Styling */
 #quizSection::-webkit-scrollbar {
   width: 6px;
 }
@@ -182,4 +203,15 @@ input[type="radio"] {
 #quizSection::-webkit-scrollbar-thumb {
   background: #66a6ff;
   border-radius: 4px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
 }
